@@ -1,0 +1,33 @@
+.modal-error {
+    margin: auto;
+    left: 0;
+    right: 0;
+    background-color: #cc5656;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 22px 7px 0 rgba(0, 0, 0, 0.05), 0 13px 7px -2px rgba(0, 0, 0, 0.05), 0 11px 5px 0 rgba(0, 0, 0, 0.02);
+    z-index: 200;
+    p {
+        color: white;
+        padding: 10px;
+        margin-left: 20px;
+    }
+    .dismiss {
+        padding: 10px;
+        color: white;
+        border: 1px solid white;
+        border-radius: 5px;
+        margin-right: 20px;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .dismiss:hover {
+        background-color: rgba(255, 255, 255, 0.222);
+    }
+}

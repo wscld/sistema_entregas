@@ -3,7 +3,8 @@
     background-color: white;
     max-width: 800px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05), 0 3px 7px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.02);
     transition: 0.3s;
@@ -16,7 +17,11 @@
         font-weight: bold;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        transition: .2s;
+        transition: 0.2s;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     .row {
         display: flex;
@@ -35,7 +40,7 @@
 }
 .item:hover {
     box-shadow: 0 22px 7px 0 rgba(0, 0, 0, 0.05), 0 13px 7px -2px rgba(0, 0, 0, 0.05), 0 11px 5px 0 rgba(0, 0, 0, 0.02);
-    .title{
+    .title {
         background-color: #d4d4d4;
     }
 }

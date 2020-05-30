@@ -29,10 +29,10 @@ export default function Lista() {
     }, [])
 
     return (
-        <>
+        <div className="lista">
             {entregas.map((entrega, index) => {
                 return <Link to={"detalhe/"+entrega._id}><Item entrega={entrega} key={index} /></Link>
             })}
-        </>
+        </div>
     );
 }

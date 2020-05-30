@@ -14,6 +14,19 @@
     .inputs {
         padding: 20px;
     }
+    .button {
+        display: block;
+        padding: 10px;
+        background-color: $primary-color;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        max-width: 200px;
+        margin: auto;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
     .row {
         flex-direction: row;
         display: flex;
@@ -26,7 +39,7 @@
             margin-left: 10px;
             position: relative;
             color: white;
-            transition: .2s;
+            transition: 0.2s;
             cursor: pointer;
             svg {
                 position: absolute;
@@ -35,7 +48,7 @@
                 transform: translate(-50%, -50%);
             }
         }
-        .icon:hover{
+        .icon:hover {
             background-color: $primary-color-darker;
         }
     }

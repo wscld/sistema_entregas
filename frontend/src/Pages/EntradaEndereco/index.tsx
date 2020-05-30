@@ -4,8 +4,10 @@ import Endereco from '../../Types/Endereco';
 import { requestEndereco } from '../../Actions/ServerActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import ModalError from '../../Components/ModalError';
 
-export default function ModalAddress(props: any) {
+export default function EntradaEndereco(props: any) {
+    const [error, setError] = useState<string>("");
     const [cep, setCep] = useState<number>(0);
     const [numero, setNumero] = useState<number>(0);
     const [cidade, setCidade] = useState<string>("");
@@ -14,15 +16,19 @@ export default function ModalAddress(props: any) {
     const [rua, setRua] = useState<string>("");
 
     function handleSave() {
-        let endereco: Endereco = {
-            cep: cep,
-            numero: numero,
-            cidade: cidade,
-            estado: estado,
-            bairro: bairro,
-            rua: rua
+        if (cep != 0 && numero != 0 && cidade != "" && estado != "" && bairro != "" && rua != "") {
+            let endereco: Endereco = {
+                cep: cep,
+                numero: numero,
+                cidade: cidade,
+                estado: estado,
+                bairro: bairro,
+                rua: rua
+            }
+            props.onSave(enderecoToString(endereco));
+        } else {
+            setError("Por favor, preencha todos os campos.");
         }
-        props.onSave(enderecoToString(endereco));
     }
 
     function getEndereco() {
@@ -34,7 +40,7 @@ export default function ModalAddress(props: any) {
                 setRua(endereco.rua as string);
             })
             .catch((err: any) => {
-
+                setError("Falha ao receber endereço");
             })
     }
 
@@ -49,6 +55,7 @@ export default function ModalAddress(props: any) {
         <>
             {props.visible ?
                 <>
+                    <ModalError error={error} onDismiss={() => setError("")} visible={error != "" ? true : false}></ModalError>
                     <div className="modal-address">
                         <div className="inputs">
                             <div className="row">
