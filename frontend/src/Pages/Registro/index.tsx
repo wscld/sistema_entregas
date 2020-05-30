@@ -3,7 +3,6 @@ import './styles.scss';
 import Entrega from '../../Types/Entrega';
 import { requestRegister } from '../../Actions/ServerActions';
 import ModalAddress from '../EntradaEndereco';
-import Endereco from '../../Types/Endereco';
 import ModalError from '../../Components/ModalError';
 
 export default function Registro(props: any) {

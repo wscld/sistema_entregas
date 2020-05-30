@@ -11,7 +11,6 @@ export default function Lista() {
     function didInit() {
         requestList()
             .then((result) => {
-                console.log(result);
                 setEntregas([...result]);
             })
             .catch((error) => {
@@ -31,7 +30,7 @@ export default function Lista() {
     return (
         <div className="lista">
             {entregas.map((entrega, index) => {
-                return <Link to={"detalhe/"+entrega._id}><Item entrega={entrega} key={index} /></Link>
+                return <Link key={index} to={"detalhe/"+entrega._id}><Item entrega={entrega} /></Link>
             })}
         </div>
     );

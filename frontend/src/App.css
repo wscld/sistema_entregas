@@ -47,3 +47,7 @@ a {
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
+
+.fake-input:hover{
+  background-color: #eee;
+}
