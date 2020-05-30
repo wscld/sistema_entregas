@@ -1,0 +1,38 @@
+@import '../../values.scss';
+
+.register {
+    display: flow-root;
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05), 0 3px 7px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.02);
+    .title {
+        padding: 20px;
+        background-color: $primary-color;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        font-weight: bold;
+        color: white;
+    }
+    .inputs {
+        padding: 20px;
+    }
+    .button {
+        display: block;
+        padding: 10px;
+        background-color: $primary-color;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        max-width: 200px;
+        margin: auto;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .button:hover {
+        background-color: $primary-color-darker;
+    }
+}
