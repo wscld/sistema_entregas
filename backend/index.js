@@ -13,10 +13,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
 
-//registro de entregas
-//recebe nomeCliente,dataEntrega,pontoPartida e pontoDestino
-//caso registrado retorna objeto entrega
-//caso erro retorna mensagem com detalhes
+
+/**
+ * Registro de entregas.
+ * Recebe nomeCliente,dataEntrega,pontoPartida e pontoDestino.
+ * Caso registrado retorna objeto entrega.
+ * Caso erro retorna mensagem com detalhes.
+ */
 app.post("/api/register", (req, res) => {
     const reqEntrega = req.body.entrega;
     if (reqEntrega) {
@@ -36,9 +39,12 @@ app.post("/api/register", (req, res) => {
 });
 
 
-//lista todas as entregas
-//não recebe nada
-//retorna array com todas as entregas registradas
+
+/**
+ * Lista todas as entregas.
+ * Não recebe nada.
+ * Retorna array com todas as entregas registradas.
+ */
 app.post("/api/list", (req, res) => {
     Entrega.find({}, (err, result) => {
         if (!err) res.send(result)
@@ -47,10 +53,14 @@ app.post("/api/list", (req, res) => {
 });
 
 
-//exibe detalhes
-//recebe id de entrega
-//caso item exista retorna objeto entrega
-//caso item não exista retorna mensagem com detalhes
+
+
+/**
+ * Exibe detalhes.
+ * Recebe id de entrega.
+ * Caso item exista retorna objeto entrega.
+ * Caso item não exista retorna mensagem com detalhes
+ */
 app.post("/api/item", (req, res) => {
     const id = req.body.id;
     if (id) {
@@ -66,7 +76,6 @@ app.post("/api/item", (req, res) => {
 
 
 
-//default escuta porta definida
 app.listen(PORT, () => {
     console.log("listening port:" + PORT);
 });
