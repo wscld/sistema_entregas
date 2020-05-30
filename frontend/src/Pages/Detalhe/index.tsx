@@ -5,6 +5,7 @@ import Entrega from '../../Types/Entrega';
 import Item from '../../Components/Item';
 import Map from '../../Components/Map'
 
+
 export default function Detalhe(props: any) {
     const [entrega, setEntrega] = useState<Entrega>();
 
@@ -38,7 +39,11 @@ export default function Detalhe(props: any) {
                 <>
                     <Item entrega={entrega} />
                     <div className="map">
-                        <Map></Map>
+                        <Map
+                            origin={entrega.pontoPartida}
+                            destination={entrega.pontoDestino}
+                        />
+    
                     </div>
                 </>
                 : null}
