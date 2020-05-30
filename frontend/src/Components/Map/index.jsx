@@ -23,7 +23,7 @@ export default function MapRenderer(props) {
     return (
         <div>
             <LoadScript
-                googleMapsApiKey=""
+                googleMapsApiKey={process.env.REACT_APP_MAPS_KEY}
             >
                 <GoogleMap
                     mapContainerStyle={containerStyle}

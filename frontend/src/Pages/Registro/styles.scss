@@ -1,4 +1,5 @@
-@import '../../values.scss';
+@import "../../values.scss";
+
 
 .register {
     display: flow-root;
@@ -8,6 +9,13 @@
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05), 0 3px 7px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.02);
+    .row {
+        display: flex;
+        flex-direction: row;
+        .search {
+            padding: 20px;
+        }
+    }
     .title {
         padding: 20px;
         background-color: $primary-color;

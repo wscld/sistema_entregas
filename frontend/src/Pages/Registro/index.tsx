@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.scss';
-import Toolbar from '../../Components/Toolbar';
 import Entrega from '../../Types/Entrega';
 import { requestRegister } from '../../Actions/ServerActions';
-export default function Registro() {
-    const [nomeCliente, setNomeCliente] = useState<String>("");
-    const [pontoPartida, setPontoPartida] = useState<String>("");
-    const [pontoDestino, setPontoDestino] = useState<String>("");
+import ModalAddress from '../../Components/ModalAddress';
+import Endereco from '../../Types/Endereco';
 
+export default function Registro() {
+    const [nomeCliente, setNomeCliente] = useState<string>("");
+    const [pontoPartida, setPontoPartida] = useState<string>("");
+    const [pontoDestino, setPontoDestino] = useState<string>("");
+    const [modalVisible, setModalVisible] = useState<boolean>(false);
+    const [currentModal, setCurrentModal] = useState<number>(0);
 
     function handleRegister() {
-        let dataEntrega: Number = new Date().getDate();
+        let dataEntrega: number = new Date().getDate();
         let entrega: Entrega = {
             nomeCliente: nomeCliente,
             pontoPartida: pontoPartida,
@@ -28,14 +31,27 @@ export default function Registro() {
             });
     }
 
+    function handleDismiss(endereco: string) {
+        console.log(endereco);
+        if (currentModal == 0) setPontoPartida(endereco);
+        else setPontoDestino(endereco);
+        setModalVisible(false);
+    }
+
+
     return (
         <>
             <div className="register">
+                <ModalAddress onDismiss={() => setModalVisible(false)} onSave={(endereco: string) => { handleDismiss(endereco) }} visible={modalVisible}></ModalAddress>
                 <div className="title">Registro de Encomenda</div>
                 <div className="inputs">
                     <input type="text" placeholder="Nome do Cliente" onChange={(e) => setNomeCliente(e.target.value)}></input>
-                    <input type="text" placeholder="Ponto de Partida" onChange={(e) => setPontoPartida(e.target.value)}></input>
-                    <input type="text" placeholder="Ponto de Destino" onChange={(e) => setPontoDestino(e.target.value)}></input>
+                    <div className="row">
+                        <div className="fake-input" onClick={() => { setModalVisible(true);setCurrentModal(0)}} >{pontoPartida || "Ponto de Partida"}</div>
+                    </div>
+                    <div className="row">
+                        <div className="fake-input" onClick={() => { setModalVisible(true);setCurrentModal(1)}} >{pontoDestino || "Ponto de Destino"}</div>
+                    </div>
                 </div>
                 <div className="button" onClick={() => handleRegister()}>Registrar</div>
             </div>

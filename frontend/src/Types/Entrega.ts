@@ -1,7 +1,7 @@
 export default interface Entrega{
-    _id?: String;
-    nomeCliente: String;
-    pontoPartida: String;
-    pontoDestino: String;
-    dataEntrega: Number;
+    _id?: string;
+    nomeCliente: string;
+    pontoPartida: string;
+    pontoDestino: string;
+    dataEntrega: number;
 }

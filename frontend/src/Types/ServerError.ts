@@ -1,3 +1,3 @@
 export default interface ServerError{
-    error:String
+    error:string
 }
