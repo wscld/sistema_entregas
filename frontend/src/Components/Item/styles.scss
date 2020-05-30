@@ -1,0 +1,32 @@
+.item {
+    display: flow-root;
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05), 0 3px 7px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.02);
+    .title {
+        padding: 15px;
+        padding-bottom: 25px;
+        padding-top: 25px;
+        background-color: #fafafa;
+        font-weight: bold;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        .icon {
+            margin-right: 10px;
+        }
+        .partida {
+            padding: 15px;
+        }
+        .destino {
+            padding: 15px;
+            padding-bottom: 25px;
+        }
+    }
+}

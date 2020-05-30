@@ -20,10 +20,12 @@ export const requestRegister = (entrega: Entrega) => {
             data: {
                 entrega: entrega
             }
-        }).then((response: Entrega) => {
-            resolve(response);
-        }).catch((err: ServerError) => {
-            reject(err);
+        }).then((response: any) => {
+            let data: Entrega = response.data;
+            resolve(data);
+        }).catch((err: any) => {
+            let data: ServerError = err.data;
+            reject(data);
         });
     });
 }
@@ -38,10 +40,12 @@ export const requestList = () => {
         axios({
             method: 'post',
             url: SERVER_URL + '/api/list',
-        }).then((response: Array<Entrega>) => {
-            resolve(response);
-        }).catch((err: ServerError) => {
-            reject(err);
+        }).then((response: any) => {
+            let data: Array<Entrega> = response.data;
+            resolve(data);
+        }).catch((err: any) => {
+            let data: ServerError = err.data;
+            reject(data);
         });
     });
 }
@@ -61,10 +65,12 @@ export const requestItem = (id: String) => {
             data: {
                 id: id
             }
-        }).then((response: Entrega) => {
-            resolve(response);
-        }).catch((err: ServerError) => {
-            reject(err);
+        }).then((response: any) => {
+            let data: Entrega = response.data;
+            resolve(data);
+        }).catch((err: any) => {
+            let data: ServerError = err.data;
+            reject(data);
         });
     });
 }

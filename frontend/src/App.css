@@ -22,3 +22,8 @@ input {
 input[type=text]:focus, form input[type="password"]:focus {
   border-color: cornflowerblue;
 }
+
+a{
+  color: inherit;
+  text-decoration: inherit;
+}
