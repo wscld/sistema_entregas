@@ -98,8 +98,12 @@ export const requestItem = (id: string) => {
                 id: id
             }
         }).then((response: any) => {
-            let data: Entrega = response.data;
-            resolve(data);
+            let data: any = response.data;
+            if (!data.error) {
+                resolve(data);
+            } else {
+                reject(data.error);
+            }
         }).catch((err: any) => {
             let data: ServerError = err.data;
             reject(data);

@@ -10,8 +10,8 @@ export default function MapRenderer(props) {
     };
 
     const center = {
-        lat: -3.745,
-        lng: -38.523
+        lat: -22.911610,
+        lng: -43.173460
     };
 
     function directionsCallback(result, status) {

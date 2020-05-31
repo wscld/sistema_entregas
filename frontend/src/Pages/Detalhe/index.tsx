@@ -4,10 +4,12 @@ import { requestItem } from '../../Actions/ServerActions';
 import Entrega from '../../Types/Entrega';
 import Item from '../../Components/Item';
 import Map from '../../Components/Map'
+import ModalError from '../../Components/ModalError';
 
 
 export default function Detalhe(props: any) {
     const [entrega, setEntrega] = useState<Entrega>();
+    const [error, setError] = useState<string>("");
 
     function didInit() {
         let id = props.match.params.id;
@@ -17,7 +19,7 @@ export default function Detalhe(props: any) {
                     setEntrega(result);
                 })
                 .catch(err => {
-
+                    setError("Entrega não encontrada.")
                 })
         }
     }
@@ -35,6 +37,7 @@ export default function Detalhe(props: any) {
 
     return (
         <div className="container">
+            <ModalError error={error} onDismiss={() => setError("")} visible={error != "" ? true : false}></ModalError>
             {entrega ?
                 <>
                     <Item entrega={entrega} />
@@ -43,7 +46,7 @@ export default function Detalhe(props: any) {
                             origin={entrega.pontoPartida}
                             destination={entrega.pontoDestino}
                         />
-    
+
                     </div>
                 </>
                 : null}
