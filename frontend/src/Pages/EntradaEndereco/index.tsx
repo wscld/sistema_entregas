@@ -15,6 +15,8 @@ export default function EntradaEndereco(props: any) {
     const [estado, setEstado] = useState<string>("");
     const [bairro, setBairro] = useState<string>("");
     const [rua, setRua] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
+
 
     function handleSave() {
         if (cep != 0 && numero != 0 && cidade != "" && estado != "" && bairro != "" && rua != "") {
@@ -33,14 +35,17 @@ export default function EntradaEndereco(props: any) {
     }
 
     function getEndereco() {
+        setLoading(true);
         requestEndereco(cep)
             .then((endereco: Endereco) => {
+                setLoading(false)
                 setCidade(endereco.cidade as string);
                 setEstado(endereco.estado as string);
                 setBairro(endereco.bairro as string);
                 setRua(endereco.rua as string);
             })
             .catch((err: any) => {
+                setLoading(false);
                 setError("Falha ao receber endereço");
             })
     }
@@ -64,7 +69,7 @@ export default function EntradaEndereco(props: any) {
                             <input type="text" placeholder="Rua" onChange={(e: any) => setRua(e.target.value)} value={rua}></input>
                             <input type="number" placeholder="Numero" onChange={(e: any) => setNumero(e.target.value)} value={numero != 0 ? numero : undefined}></input>
                         </div>
-                        <div onClick={() => handleSave()} className="button">Salvar</div>
+                        <div onClick={() => loading ? null : handleSave()} className="button">{loading ? "Carregando..." : "Salvar"}</div>
                     </div>
                     <div className="modal-background" onClick={props.onDismiss}></div>
                 </>

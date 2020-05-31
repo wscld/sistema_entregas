@@ -4,8 +4,8 @@
   "description": "backend de sistema de entregas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "test": "jest",
+    "start": "node server.js"
   },
   "author": "Wesley Caldas",
   "license": "ISC",
@@ -14,5 +14,12 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.9.16"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^26.0.1",
+    "superagent": "^5.2.2",
+    "supertest": "^4.0.2"
   }
 }

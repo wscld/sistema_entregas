@@ -1,11 +1,12 @@
-const app = require("express")();
+const path = require('path');
+const express = require("express");
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const Entrega = require("./Schemas/Entrega");
+const app = express();
 
 //config
-const PORT = 8081;
 mongoose.connect('mongodb://localhost:27017/sisentregas', { useNewUrlParser: true });
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -75,7 +76,7 @@ app.post("/api/item", (req, res) => {
 
 
 
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use('*', (req, res) => res.sendFile(path.join(__dirname, '../frontend/build', 'index.html')));
 
-app.listen(PORT, () => {
-    console.log("listening port:" + PORT);
-});
+module.exports = app;

@@ -34,7 +34,7 @@ export default function Detalhe(props: any) {
 
 
     return (
-        <div>
+        <div className="container">
             {entrega ?
                 <>
                     <Item entrega={entrega} />

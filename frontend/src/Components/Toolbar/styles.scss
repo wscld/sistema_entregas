@@ -19,4 +19,10 @@
     .toolbar-item:hover {
         background-color: #eee;
     }
+
+    @media only screen and (max-width: 600px) {
+        .logo {
+            display: none;
+        }
+    }
 }

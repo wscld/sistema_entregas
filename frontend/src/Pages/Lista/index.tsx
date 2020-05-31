@@ -14,7 +14,7 @@ export default function Lista() {
                 setEntregas([...result]);
             })
             .catch((error) => {
-                
+
             })
     }
 
@@ -28,10 +28,12 @@ export default function Lista() {
     }, [])
 
     return (
-        <div className="lista">
-            {entregas.map((entrega, index) => {
-                return <Link key={index} to={"detalhe/"+entrega._id}><Item entrega={entrega} /></Link>
-            })}
+        <div className="container">
+            <div className="lista">
+                {entregas.map((entrega, index) => {
+                    return <Link key={index} to={"detalhe/" + entrega._id}><Item entrega={entrega} /></Link>
+                })}
+            </div>
         </div>
     );
 }
