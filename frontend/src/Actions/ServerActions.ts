@@ -5,7 +5,7 @@ import Endereco from "../Types/Endereco";
 
 const axios = require("axios").default;
 
-const SERVER_URL = "http://localhost:8081";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
 /**

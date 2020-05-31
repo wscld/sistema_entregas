@@ -7,7 +7,7 @@ const Entrega = require("./Schemas/Entrega");
 const app = express();
 
 //config
-mongoose.connect('mongodb://localhost:27017/sisentregas', { useNewUrlParser: true });
+mongoose.connect('mongodb://127.0.0.1:27017/sisentregas', { useNewUrlParser: true });
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
