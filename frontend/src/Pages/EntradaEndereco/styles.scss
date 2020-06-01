@@ -1,6 +1,6 @@
 @import "../../values.scss";
 
-.modal-address {
+.entrada-endereco {
     background-color: white;
     border-radius: 5px;
     position: absolute;
@@ -11,6 +11,14 @@
     margin: auto;
     left: 0;
     right: 0;
+    .entrada-titulo{
+        padding: 15px;
+        background-color: #eee;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
     .inputs {
         padding: 20px;
     }

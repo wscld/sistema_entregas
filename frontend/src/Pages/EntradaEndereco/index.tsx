@@ -57,7 +57,8 @@ export default function EntradaEndereco(props: any) {
             {props.visible ?
                 <>
                     <ModalError error={error} onDismiss={() => setError("")} visible={error != "" ? true : false}></ModalError>
-                    <div className="modal-address">
+                    <div className="entrada-endereco">
+                        <div className="entrada-titulo">Endereço:</div>
                         <div className="inputs">
                             <div className="row">
                                 <input type="number" placeholder="CEP" onChange={(e: any) => setCep(e.target.value)} value={cep != 0 ? cep : undefined}></input>
