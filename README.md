@@ -1,8 +1,9 @@
 <h1 align="center">Welcome to SistemaEntregas 👋</h1>
-<p>
-</p>
-
-> Backend e Frontend desenvolvidos para sistema de entrega simples
+<p>Sistema de cadastro de entregas desenvolvido com Node e React</p>
+Como rodar o backend:
+``` $ node start.js```
+ No frontend:
+  ```$ npm run start```
 
 ## Author
 
@@ -15,5 +16,3 @@
 
 Give a ⭐️ if this project helped you!
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
