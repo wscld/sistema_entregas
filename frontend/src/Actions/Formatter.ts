@@ -1,4 +1,4 @@
-import Endereco from "../Types/Endereco";
+import Endereco from "../Models/Endereco";
 
 export const enderecoToString = (endereco: Endereco) => {
     if (endereco) return endereco.rua + ", " + endereco.numero + ", " + endereco.bairro + ", " + endereco.cidade + ", " + endereco.estado;

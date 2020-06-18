@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.scss';
-import Entrega from '../../Types/Entrega';
+import Entrega from '../../Models/Entrega';
 import { requestRegister } from '../../Actions/ServerActions';
 import EntradaEndereco from '../EntradaEndereco';
 import ModalError from '../../Components/ModalError';

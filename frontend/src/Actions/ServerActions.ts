@@ -1,7 +1,7 @@
-import Entrega from "../Types/Entrega";
-import ServerError from "../Types/ServerError";
+import Entrega from "../Models/Entrega";
+import ServerError from "../Models/ServerError";
 import { resolve } from "dns";
-import Endereco from "../Types/Endereco";
+import Endereco from "../Models/Endereco";
 
 const axios = require("axios").default;
 
@@ -70,9 +70,10 @@ export const requestRegister = (entrega: Entrega) => {
 export const requestList = () => {
     return new Promise<Entrega[]>((resolve, reject) => {
         axios({
-            method: 'post',
+            method: 'get',
             url: SERVER_URL + '/api/list',
         }).then((response: any) => {
+            console.log(response);
             let data: Array<Entrega> = response.data;
             resolve(data);
         }).catch((err: any) => {
@@ -92,9 +93,9 @@ export const requestList = () => {
 export const requestItem = (id: string) => {
     return new Promise<Entrega>((resolve, reject) => {
         axios({
-            method: 'post',
+            method: 'get',
             url: SERVER_URL + '/api/item',
-            data: {
+            params: {
                 id: id
             }
         }).then((response: any) => {

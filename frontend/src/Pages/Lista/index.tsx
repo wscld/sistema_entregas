@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import Item from '../../Components/Item';
-import Entrega from '../../Types/Entrega';
+import Entrega from '../../Models/Entrega';
 import ModalError from '../../Components/ModalError'
 import { requestList } from '../../Actions/ServerActions';
 import { Link } from 'react-router-dom';

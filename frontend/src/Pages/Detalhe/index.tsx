@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './styles.scss';
 import { requestItem } from '../../Actions/ServerActions';
-import Entrega from '../../Types/Entrega';
+import Entrega from '../../Models/Entrega';
 import Item from '../../Components/Item';
 import Map from '../../Components/Map'
 import ModalError from '../../Components/ModalError';

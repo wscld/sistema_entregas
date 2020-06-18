@@ -1,5 +1,5 @@
 import { formatTime, enderecoToString } from "./Formatter";
-import Endereco from "../Types/Endereco";
+import Endereco from "../Models/Endereco";
 
 
 test("test formatTime() with current time", () => {

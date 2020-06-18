@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './styles.scss';
-import Endereco from '../../Types/Endereco';
+import Endereco from '../../Models/Endereco';
 import { requestEndereco } from '../../Actions/ServerActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
